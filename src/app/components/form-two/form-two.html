@@ -1,0 +1,16 @@
+<form (ngSubmit)="submit()">
+    <div>
+        <label for="name">nome:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="name">
+    </div>
+    <div>
+        <label for="surname">cognome:</label>
+        <input type="text" id="surname" name="surname" [(ngModel)]="surname">
+    </div>
+    <div>
+        <label for="age">età:</label>
+        <input type="number" id="age" name="age" [(ngModel)]="age">
+    </div>
+    <button type="submit">Submit
+    </button>
+</form>
