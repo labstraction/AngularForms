@@ -36,6 +36,34 @@ export class FormOne {
   })
 
 
+  // profileForm:FormGroup;
+
+
+  // constructor(private fb: FormBuilder) {
+
+  //   this.profileForm = this.fb.group({
+  //     name: ['paperone', Validators.required],
+  //     surname: ['de paperis', Validators.maxLength(4)],
+  //     adress: this.fb.group({
+  //       city: ['paperopoli'],
+  //       street: ['via delle oche'],
+  //       number: [12, [Validators.min(1), Validators.required]]
+  //     }),
+  //     aliases: this.fb.array([]),
+  //     children: this.fb.array([]),
+  //   })
+
+  // }
+
+  intervalID: number;
+
+  constructor(){
+    this.intervalID = setInterval(() => {
+      console.log('ciao')
+    }, 1000);
+  }
+
+
   submit() {
     console.log(this.profileForm);
   }
@@ -67,6 +95,10 @@ export class FormOne {
 
   removeChild(index: number) {
     this.getChildren().removeAt(index);
+  }
+
+  ngOnDestroy(){
+    clearInterval(this.intervalID);
   }
 
 
